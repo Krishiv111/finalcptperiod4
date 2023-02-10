@@ -43,6 +43,11 @@ def activate_job():
 # this runs the application on the development server
 if __name__ == "__main__":
     # change name for testing
-    from flask_cors import CORS
-    cors = CORS(app)
+    #from flask_cors import CORS
+<<<<<<< HEAD
+    #cors = CORS(app)   
     app.run(debug=True, host="0.0.0.0", port="8080")
+=======
+    #cors = CORS(app)
+    app.run(debug=True, host="0.0.0.0", port="3067")
+>>>>>>> a377287c5e4b4703593fe4a0c7ca9354678235b4
