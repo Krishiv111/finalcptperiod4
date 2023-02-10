@@ -44,5 +44,11 @@ def activate_job():
 if __name__ == "__main__":
     # change name for testing
     #from flask_cors import CORS
+<<<<<<< HEAD
     #cors = CORS(app)   
     app.run(debug=True, host="0.0.0.0", port="8086")
+=======
+    #cors = CORS(app)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///volumes/sqlite.db'
+    app.run(debug=True, host="0.0.0.0", port="3067")
+>>>>>>> a377287c5e4b4703593fe4a0c7ca9354678235b4
