@@ -46,7 +46,7 @@ if __name__ == "__main__":
     #from flask_cors import CORS
 <<<<<<< HEAD
     #cors = CORS(app)   
-    app.run(debug=True, host="0.0.0.0", port="8086")
+    app.run(debug=True, host="0.0.0.0", port="8080")
 =======
     #cors = CORS(app)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///volumes/sqlite.db'
