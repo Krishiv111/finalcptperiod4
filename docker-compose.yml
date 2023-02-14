@@ -8,10 +8,10 @@ services:
               volumes:
                       - persistent_volume:/app/volumes
 volumes:
-persistent_volume:
-  driver: local
-  driver_opts:
-    o: bind
-    type: none
-    device: /home/ubuntu/finalcptperiod4/volumes
+  persistent_volume:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/ubuntu/finalcptperiod4/volumes
     # replace just flask_portfolio
