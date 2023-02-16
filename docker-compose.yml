@@ -1,17 +1,11 @@
 version: '3'
 services:
-      web:
-              image: flask_finalcptperiod4_v1
-              build: .
-              ports:
-                      - "8034:8080"
-              volumes:
-                      - persistent_volume:/app/volumes
-volumes:
-  persistent_volume:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /home/ubuntu/finalcptperiod4/volumes
-    # replace just flask_portfolio
+        web:
+                image: flask_finalcptperiod4_v1
+                build: .
+                ports:
+                        - "8753:8753"
+                volumes:
+                        - ./volumes:/volumes
+                        - ./instance:/instance
+                restart: unless-stopped
