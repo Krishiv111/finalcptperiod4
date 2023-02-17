@@ -225,7 +225,7 @@ def initUsers():
     with app.app_context():
         """Create database and tables"""
         db.init_app(app)
-        db.create_all()
+        db.create_all(app=app)
         
         """Tester data for table"""
         u1 = User(name='house 1', uid='h1', beds= 'five', baths='three', price='500$/night')
