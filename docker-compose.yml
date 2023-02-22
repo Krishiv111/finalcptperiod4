@@ -4,7 +4,7 @@ services:
                 image: flask_finalcptperiod4_v1
                 build: .
                 ports:
-                        - "8753:8080"
+                        - "8753:8753"
                 volumes:
                         - ./volumes:/volumes
                         - ./instance:/instance
