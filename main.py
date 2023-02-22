@@ -40,7 +40,7 @@ def activate_job():
     initJokes()
     initUsers()
 
-# this runs the application on the development server
+# this runs the application on  the development server
 if __name__ == "__main__":
     # change name for testing 
     from flask_cors import CORS
