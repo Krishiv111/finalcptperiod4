@@ -5,15 +5,12 @@ import os, base64
 import json
 
 from __init__ import app, db
-from sqlalchemy import create_engine, exc
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
 ''' Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into Python shell and follow along '''
 
-e = create_engine(...)
-c = e.connect()
 # Define the Post class to manage actions in 'posts' table,  with a relationship to 'users' table
 class Update(db.Model):
     __tablename__ = 'posts'
