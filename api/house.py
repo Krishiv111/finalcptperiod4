@@ -3,15 +3,15 @@ from flask import Blueprint, request, jsonify
 from flask_restful import Api, Resource # used for REST API building
 from datetime import datetime
 
-from model.users import User
+from model.houses import Houseadd
 
-user_api = Blueprint('user_api', __name__,
-                   url_prefix='/api/users')
+house_api = Blueprint('house_api', __name__,
+                   url_prefix='/api/houses')
 
 # API docs https://flask-restful.readthedocs.io/en/latest/api.html
-api = Api(user_api)
+api = Api(house_api)
 
-class UserAPI:        
+class HouseAPI:        
     class _Create(Resource):
         def post(self):
             ''' Read data for json body '''
@@ -40,8 +40,7 @@ class UserAPI:
             
 
             ''' #1: Key code block, setup USER OBJECT '''
-            uo = User(name=name, 
-                      uid=uid)
+            uo = Houseadd(name=name, uid=uid, beds=beds,baths=baths, price = price)
             
             ''' Additional garbage error checking '''
             # set password if provided
@@ -49,16 +48,16 @@ class UserAPI:
             
             ''' #2: Key Code block to add user to database '''
             # create user in database
-            user = uo.create()
+            house = uo.create()
             # success returns json of user
-            if user:
-                return jsonify(user.read())
+            if house:
+                return jsonify(house.read())
             # failure returns error
             return {'message': f'Processed {name}, either a format error or User ID {uid} is duplicate'}, 400
 
     class _Read(Resource):
         def get(self):
-            users = User.query.all()    # read/extract all users from database
+            users = Houseadd.query.all()    # read/extract all users from database
             json_ready = [user.read() for user in users]  # prepare output in json
             return jsonify(json_ready)  # jsonify creates Flask response object, more specific to APIs than json.dumps
     
@@ -78,6 +77,8 @@ class UserAPI:
             
             
             ''' authenticated user '''
+            
+
             
 
     # building RESTapi endpoint
