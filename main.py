@@ -8,14 +8,12 @@ from __init__ import app  # Definitions initialization
 from model.jokes import initJokes
 from model.houses import initHouses
 from model.activities import initActivity
-from model.reviewers import initreview
 
 # setup APIs
 from api.covid import covid_api # Blueprint import api definition
 from api.joke import joke_api # Blueprint import api definition
 from api.house import house_api # Blueprint import api definition
 from api.activity import activities_api # Blueprint import api definition
-from api.review import review_api # Blueprint import api definition
 
 # setup App pages
 from projects.projects import app_projects # Blueprint directory import projects definition
@@ -24,7 +22,6 @@ from projects.projects import app_projects # Blueprint directory import projects
 app.register_blueprint(joke_api) # register api routes
 app.register_blueprint(covid_api) # register api routes
 app.register_blueprint(house_api) # register api routes
-app.register_blueprint(review_api) # register api routes
 app.register_blueprint(activities_api) # register api routes
 app.register_blueprint(app_projects) # register app pages
 
@@ -46,7 +43,6 @@ def activate_job():
     initJokes()
     initHouses()
     initActivity()
-    initreview()
 
 # this runs the application on  the development server
 if __name__ == "__main__":
