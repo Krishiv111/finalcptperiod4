@@ -109,17 +109,6 @@ class ActivityDay(db.Model):
         db.session.delete(self)
         db.session.commit()
         return None
-    
-    def update(self, activity="", address="", fun=""):
-        """only updates values with length"""
-        if len(activity) > 0:
-           self.activity = activity
-        if len (address) > 0:
-           self.address = address 
-        if len(fun) > 0:
-           self.fun = fun    
-        db.session.commit()
-        return self
 
     '''
     read method with the self parameter, reading the object with all of the 
