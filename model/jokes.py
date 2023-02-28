@@ -24,7 +24,7 @@ joke_list = [
     'An SQL statement walks into a bar and sees two tables. It approaches, and asks may I join you?'
 ]
 
-# Initialize jokes
+# Initialize joke
 def initJokes():
     # setup jokes into a dictionary with id, joke, haha, boohoo
     item_id = 0
