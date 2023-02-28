@@ -1,6 +1,6 @@
 import json
 from flask import Blueprint, request, jsonify
-from flask_restful import Api, Resource # used for REST API building
+from flask_restful import Api, Resource # used for REST API buildin
 from datetime import datetime
 
 from model.houses import Houseadd
